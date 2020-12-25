@@ -1,0 +1,15 @@
+.vHeight{
+    height: 600px;
+}
+.number{
+    height: 200px;
+}
+.stars{
+    padding: 10px;
+    border: 1px solid #09c;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.stars span{
+    font-size: 16px;
+}

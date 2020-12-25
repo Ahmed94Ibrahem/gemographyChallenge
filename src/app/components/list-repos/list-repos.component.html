@@ -1,0 +1,21 @@
+<mat-card class="py-5">
+    <ngb-pagination [collectionSize]="70" [(page)]="page" (pageChange)="onPageChange($event)" aria-label="Default pagination"></ngb-pagination>
+
+    <cdk-virtual-scroll-viewport itemSize="100" class="vHeight">
+        <mat-card *cdkVirtualFor="let repo of reposList; let i = index" class="number">
+            <div class="row">
+                <div class="col-lg-2">
+                    <img class="img-fluid" [src]="repo.owner.avatar_url">
+                </div>
+                <div class="col-lg-10">
+                     <h1>{{repo.name}}</h1>
+                     <h3>{{repo.description}}</h3>
+                     <span class="stars">Stars: <span class="badge badge-success">{{repo.stargazers_count}}</span></span>
+                     <span class="stars">Issues: <span class="badge badge-danger">{{repo.open_issues_count}}</span></span>
+                     <span>Submitted {{repo.created_at}} ago by {{repo.owner.login}}</span>
+                </div>
+            </div>
+        </mat-card>
+
+    </cdk-virtual-scroll-viewport>
+</mat-card>
